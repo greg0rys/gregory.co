@@ -1,5 +1,6 @@
 <?
 include_once './php_scripts/site_data.php';
+include_once 'php_scripts/creds.php';
 ?>
 
 <?= DOCTYPE ?>
