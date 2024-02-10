@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 include_once './php_scripts/portfolio_db.php';
 include_once './php_scripts/site_data.php';
 session_start();
+$g = 'test';
 
 ?>
 
