@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'NerdFontMono', monospace;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-sidebar {
+    width: 20%;
+    background: linear-gradient(45deg, #b3e0d6, #c599ff);
+    padding: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.sidebar-heading {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: 'cursive', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center the text */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 60px;
+    gap: 20px;
+}
+
+.grid-item {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d9bca0;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    color: #333;
+}
+
+.grid-item:hover {
+    transform: translateY(-15px);
+}
+
+.footer {
+    width: 100%;
+    background-color: #f0e0d6;
+    padding: 10px;
+    color: #333;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Additional styles for animation */
+.grid-item.open {
+    transform: translateY(-15px);
+}
+
+.nerd-font-mono {
+    font-family: 'NerdFontMono', monospace;
+    font-style: italic;
+    color: #E96549;      
+}
+
+/* Existing styles */
+
+.less-margin {
+    margin-bottom: 10px;
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .left-sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        background: linear-gradient(45deg, #b3e0d6, #c599ff);
+        padding: 20px;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .main-content {
+        padding-top: 80px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        gap: 10px;
+    }
+
+    .footer {
+        margin-top: -60px;
+    }
+
+    .main-content,
+    .grid-item {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+        flex: 0 1 calc(100% - 20px);
+        transition: none;
+    }
+}

@@ -1,0 +1,17 @@
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+.skills-list li {
+    flex-basis: calc(50% - 10px); /* 50% width with a bit of margin */
+    margin-bottom: 10px; /* Adjust the margin between items */
+}
+
+@media (max-width: 480px) {
+    .skills-list li {
+        flex-basis: 100%; /* Full width on smaller screens */
+    }
+}

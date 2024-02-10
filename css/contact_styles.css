@@ -1,0 +1,21 @@
+.grid-container {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.contact-info,
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*mobile layout for the contact form*/
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
