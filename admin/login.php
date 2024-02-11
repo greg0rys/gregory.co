@@ -1,10 +1,17 @@
 <?php
-include_once 'php_scripts/site_data.php';
-include_once 'php_scripts/creds.php';
-include_once 'php_scripts/db_functions.php';
-enable_dev_mode(); // turn on error reporting
-
 session_start(); // Start the session to manage user authentication
+include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/site_data.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/creds.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/db_functions.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+
+
+
+
 $host_name = 'db5015078978.hosting-data.io';
 $database = 'dbs12520963';
 $user_name = 'dbu5509399';
@@ -63,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: /admin/");
     exit();
 }
+
 ?>
 
 

@@ -84,6 +84,6 @@ $path = 'https://www.gregoryshenefelt.com/admin/';
 	    <a href="<?php echo $path; ?>add_user">Add New User</a>
 		</li>
 </ul>
-  
+
 </body>
 </html>
