@@ -3,30 +3,23 @@ session_start(); // Start the session to manage user authentication
 include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/site_data.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/creds.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/db_functions.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 
-$link = new mysqli($users_db['host'], $users_db['user'], $users_db['password'], $users_db['db_name']);
+$conn = new mysqli($users_db['host'], $users_db['user'], $users_db['password'], $users_db['db_name']);
 
-// Check connection
-if ($link->connect_error) {
-    die("Connection failed: " . $link->connect_error);
-}
+// Check connection for any errors
+in_error($conn);
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $username = $_POST['username'];
     $password = $_POST['password'];
-    // Encrypt the password using SHA-256 (matching the encryption in the login form)
-     // $hashedPassword = hash('sha256', $password);
 
-    // Prepare SQL statement to check user credentials
-    $stmt = $link->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-    $stmt->bind_param("ss", $username, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $result = get_site_user($conn, $username, $password);
 
     // Check if user exists
     if ($result->num_rows == 1) {
@@ -62,6 +55,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
-?>
 
 

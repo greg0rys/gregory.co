@@ -1,16 +1,14 @@
 <?php
-// Database connection
-$host = 'db5015067095.hosting-data.io';
-$username = 'dbu942845';
-$password = 'Radiokid!!0329';
-$database = 'dbs12512233';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/site_data.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/creds.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/db_functions.php';
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+$conn = new mysqli($projects_db['host'], $projects_db['user'], $projects_db['password'], $projects_db['db_name']);
 
-$conn = new mysqli($host, $username, $password, $database) or die("ERRRR");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// check for connection errors
+in_error($conn);
 
 // Form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,6 +33,7 @@ if (isset($_GET['delete'])) {
 
     $sql = "DELETE FROM my_projects WHERE ID = $delete_id";
 
+    
     if ($conn->query($sql) === TRUE) {
         echo "Record deleted successfully";
     } else {
@@ -42,16 +41,9 @@ if (isset($_GET['delete'])) {
     }
 }
 
-// Fetch records
 $sql = "SELECT * FROM `my_projects`";
-$result = $conn->query($sql);
+$records= exe_query($conn, $sql);
 
-$records = [];
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $records[] = $row;
-    }
-}
 ?>
 
 <!DOCTYPE html>
