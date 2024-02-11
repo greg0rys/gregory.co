@@ -8,16 +8,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-
-
-
-
-$host_name = 'db5015078978.hosting-data.io';
-$database = 'dbs12520963';
-$user_name = 'dbu5509399';
-$password = 'Radiokid!!0329';
-
-$link = new mysqli($host_name, $user_name, $password, $database);
+$link = new mysqli($users_db['host'], $users_db['user'], $users_db['password'], $users_db['db_name']);
 
 // Check connection
 if ($link->connect_error) {
