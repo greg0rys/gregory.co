@@ -1,0 +1,91 @@
+*{
+    color: #3a3153;
+
+}
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.container > div {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+form {
+    max-width: 100%;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #3a3153;
+
+}
+input[type="text"],
+input[type="url"],
+input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Ensure padding and border don't increase element's width */
+    border: 2px solid #3a3153;
+    color: #3a3153;
+
+
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #3a3153;
+    border: none;
+    cursor: pointer;
+    border: 2px solid #3a3153;
+
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+    color: #3a3153;
+    border: 2px solid #3a3153;
+
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #fefdfd;
+    padding: 8px;
+    text-align: center;
+    color: #3a3153;
+
+}
+th {
+    background-color: #f2f2f2;
+}
+.delete-btn, .edit-btn {
+    background-color: #f44336;
+    color: #3a3153;
+    border: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    margin: 2px;
+}
+.delete-btn:hover, .edit-btn:hover {
+    background-color: #d32f2f;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Responsive table styling */
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 6px;
+    }
+}
