@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="<?= TAILWIND_URL ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           integrity="sha512-K1N7E50C9F4MdSXyp9S1O+xnhlmaUzTnq+3OvVKg1Ib6AhT8YGh2kU1g5uPjXz3F0iKY+XCpAziq3PnGSUJ4Cg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />

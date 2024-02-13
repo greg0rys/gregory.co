@@ -2,15 +2,19 @@
  * Given the current URL hide the navbar link for the current page that we are on. 
  */
 
-let site_url = 'https://www.gregoryshenefelt.com';
+const  site_url = 'https://www.gregoryshenefelt.com';
 let current_url = document.URL;
+
 // grab all <a> elements by id name
-let links = [
+// unmutability 
+const links = [
     document.querySelector("#about_page"),
     document.querySelector("#contact_page"),
     document.querySelector("#homepage")
 ];
-let site_pages = [
+
+// unmutability 
+const site_pages = [
     `${site_url}/`,
     `${site_url}/about`,
     `${site_url}/contact`,
