@@ -6,7 +6,11 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/php_scripts/db_functions.php';
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
+static $logged_on = false;
 
+if($logged_on):
+    header("Location: dashboard");
+endif;
 
 $conn = new mysqli($users_db['host'], $users_db['user'], $users_db['password'], $users_db['db_name']);
 
@@ -25,6 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // User authenticated, set session variables
         $_SESSION['username'] = $username;
+        $_SESSION['logged_on'] = true;
+        $logged_on = true;
+
         
         // you can leave the file extension off so it isn't put into the url
         // this looks for the file in the current directory unless you provide another path.

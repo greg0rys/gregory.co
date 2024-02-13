@@ -1,6 +1,6 @@
 <?php
 
-ini_set('display_errors', 1);
+// ini_set('display_errors', 1);
 include_once './php_scripts/portfolio_db.php';
 include_once './php_scripts/site_data.php';
 session_start();
@@ -8,14 +8,16 @@ session_start();
 ?>
 
 <?= DOCTYPE ?>
-<html lang="en">
-
-<head>
+<html lang="en"> 
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?= TAILWIND_URL ?>" rel="stylesheet">
+    <link rel="stylesheet" href="./includes/google_font.css"/>
     <title><?= SITE_OWNER ?>'s Portfolio</title>
 </head>
+
+
 
 <body class="bg-gray-100 font-sans">
 

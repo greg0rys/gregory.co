@@ -51,6 +51,7 @@ session_start(); //start the session to begin tracking user info
     </style>
 </head>
 <body>
+<? include_once __DIR__ . '/admin_nav.php'; ?>
 
 <div class="container">
 
