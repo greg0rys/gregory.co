@@ -31,6 +31,8 @@ function create_skills_list()
         integrity="sha512-K1N7E50C9F4MdSXyp9S1O+xnhlmaUzTnq+3OvVKg1Ib6AhT8YGh2kU1g5uPjXz3F0iKY+XCpAziq3PnGSUJ4Cg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/about_styles.css"/>
+    <link rel="stylesheet" href="./includes/google_font.css"/>
+
 
 </head>
 

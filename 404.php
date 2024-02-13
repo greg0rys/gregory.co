@@ -8,32 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           integrity="sha512-K1N7E50C9F4MdSXyp9S1O+xnhlmaUzTnq+3OvVKg1Ib6AhT8YGh2kU1g5uPjXz3F0iKY+XCpAziq3PnGSUJ4Cg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./includes/google_font.css"/>
 
     <title>404 - Page Not Found</title>
-	<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-	* {
-    font-family: "Roboto Mono", monospace; /* Use Roboto Mono font */
-}
-</style>
-
 </head>
 
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
 
     <!-- Navbar -->
-    <nav class="bg-blue-600 p-4">
-        <div class="container mx-auto flex justify-between items-start">
-            <h1 class="text-pink-200 text-xl font-semibold">Greg Shenefelt</h1>
-            <div class="flex items-center space-x-4">
-                <a href="https://gregoryshenefelt.com/about" class="text-white hover:text-gray-300">About</a>
-                <a href="https://gregoryshenefelt.com/contact" class="text-white hover:text-gray-300">Contact</a>
-                <a href="https://gregoryshenefelt.com" class="text-white hover:text-gray-300">
-                    <i class="fas fa-external-link-alt"></i> Visit My Portfolio
-                </a>
-            </div>
-        </div>
-    </nav>
+    <?php include_once  './includes/navbar.php'; ?>
 
     <!-- Content -->
     <div class="container mx-auto p-4 text-center mt-15 flex-grow">
@@ -56,7 +39,9 @@
     </div>
 
 <!-- load jquery before the pages custom script -->
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
+<?= JQUERY_TAG ?>
+
 <script>
 // Shorthand for $( document ).ready()
 $(function () {
@@ -105,4 +90,4 @@ $(function () {
 
 </html>
 
-</html>
+
